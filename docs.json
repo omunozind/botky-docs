@@ -1,0 +1,23 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Botky",
+  "colors": {
+    "primary": "#ff0000"
+  },
+  "appearance": {
+    "default": "light"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Inicio",
+        "pages": ["index", "quickstart"]
+      },
+      {
+        "group": "Guías",
+        "pages": ["guides/primera-guia"]
+      }
+    ]
+  }
+}
