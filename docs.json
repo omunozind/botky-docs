@@ -8,11 +8,18 @@
   "appearance": {
     "default": "light"
   },
+  "icons": {
+    "library": "fontawesome"
+  },
   "navigation": {
     "groups": [
       {
         "group": "Inicio",
         "pages": ["index", "quickstart"]
+      },
+      {
+        "group": "Constructor de Flujos",
+        "pages": ["flow-builder/overview"]
       },
       {
         "group": "Guías",
