@@ -12,7 +12,7 @@ Piensa en tu chatbot como una casa con habitaciones, y cada habitación con mueb
 
 <CardGroup cols={3}>
   <Card title="Flujo" icon="house">
-    Es la "casa" completa: el contenedor principal de toda la lógica de tu bot para un canal específico (por ejemplo, tu bot de WhatsApp).
+    Es la "casa" completa: el contenedor principal de toda la lógica de tu bot para un canal específico (por ejemplo, tu bot de WhatsApp). Existen 11 tipos de flujo distintos, según el canal con el que quieras hablar.
   </Card>
   <Card title="Sub-flujo" icon="door-open">
     Son las "habitaciones" dentro del flujo: secciones que agrupan una parte de la conversación, para mantener todo ordenado.
@@ -21,6 +21,18 @@ Piensa en tu chatbot como una casa con habitaciones, y cada habitación con mueb
     Son los "muebles": la acción concreta dentro de una habitación, como enviar un mensaje o hacer una pregunta.
   </Card>
 </CardGroup>
+
+<Frame caption="Vista del Constructor de Flujos mostrando un flujo, sus sub-flujos y los pasos dentro de cada uno">
+  <img src="/images/flow-builder/estructura-flujo.png" alt="Vista general del Constructor de Flujos con flujo, sub-flujo y pasos" />
+</Frame>
+
+<Accordion title="¿Qué tipos de sub-flujo existen?">
+  No todos los sub-flujos son iguales, hay tres clases:
+
+  - **Sub-flujo general** — el más común, su comportamiento varía según el tipo de flujo en el que estés
+  - **Tarea en segundo plano (con activador)** — procesa tareas repetitivas sin que el usuario lo note
+  - **Procesamiento en segundo plano** — ejecuta lógica interna sin interacción directa con el usuario
+</Accordion>
 
 <Accordion title="¿Qué tipos de pasos existen?">
   Cada "mueble" (paso) tiene un propósito distinto:
@@ -58,6 +70,10 @@ Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios r
   </Step>
 </Steps>
 
+<Frame caption="Botón 'Editar flujo' y el indicador de versión borrador/publicada">
+  <img src="/images/flow-builder/version-borrador-publicada.png" alt="Interfaz mostrando el cambio entre versión borrador y versión publicada" />
+</Frame>
+
 ## Cómo moverte por el Constructor de Flujos
 
 <CardGroup cols={2}>
@@ -72,6 +88,10 @@ Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios r
 <Note>
   Puedes personalizar tu espacio de trabajo: elige un tema visual, oculta el mini-mapa si te distrae, o activa/desactiva los tooltips (esos globitos de ayuda que explican cada botón).
 </Note>
+
+<Frame caption="Barra de navegación superior y barra lateral del Constructor de Flujos">
+  <img src="/images/flow-builder/navegacion-sidebar.png" alt="Barra de navegación y barra lateral con todas las secciones" />
+</Frame>
 
 ## Operaciones básicas para construir un flujo
 
@@ -89,3 +109,7 @@ Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios r
     Puedes copiar pasos dentro del mismo sub-flujo, hacia otro sub-flujo, hacia otro bot del mismo canal (los campos personalizados se crean solos), o incluso hacia un canal distinto (las funciones que no sean compatibles se quitan automáticamente). Por seguridad, solo puedes pegar una vez por cada copia.
   </Accordion>
 </AccordionGroup>
+
+<Frame caption="Selección múltiple de pasos (bordes en verde) lista para agrupar o mover">
+  <img src="/images/flow-builder/seleccion-multiple.png" alt="Varios pasos seleccionados con bordes verdes en el lienzo" />
+</Frame>
