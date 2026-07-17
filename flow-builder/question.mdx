@@ -47,6 +47,15 @@ Redirige el flujo cuando el usuario no responde a tiempo. Por defecto, una pregu
   <Accordion title="Teléfono" icon="phone">
     Solo se permiten los caracteres `0-9` y `+` — y el `+` únicamente al inicio. El número debe tener más de 6 caracteres.
   </Accordion>
+  <Accordion title="Correo" icon="envelope">
+    La validación básica revisa que el valor tenga una `@` y un punto `.`.
+  </Accordion>
+  <Accordion title="Ubicación" icon="location-dot">
+    Este formato de pregunta es exclusivo del canal **WhatsApp** (solo números on-premise). Al activarse, WhatsApp le pide permiso al usuario para acceder a su ubicación actual — si el usuario la comparte, la latitud y longitud se guardan en el campo personalizado que hayas definido.
+  </Accordion>
+  <Accordion title="Entrada silenciosa (Silent Input)" icon="ear-listen">
+    Captura varias respuestas del usuario durante un período de tiempo y las une en una sola respuesta. Lo que la hace distinta de las demás preguntas: **no necesitas mostrarle ninguna pregunta al usuario** para capturar sus respuestas.
+  </Accordion>
 </AccordionGroup>
 
 <Frame caption="Configuración de un nodo de Pregunta con respuestas rápidas">
