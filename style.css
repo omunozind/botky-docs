@@ -1,0 +1,6 @@
+/* Círculo numerado de <Steps> con los colores de marca Botky: fondo lima, número en azul marino */
+step > div:first-child {
+  background-color: #DBF227 !important;
+  border-color: #DBF227 !important;
+  color: #042940 !important;
+}
