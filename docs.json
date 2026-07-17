@@ -42,7 +42,8 @@
           {
             "group": "Building Blocks / Pasos",
             "pages": [
-              "flow-builder/send-message"
+              "flow-builder/send-message",
+              "flow-builder/question"
             ]
           }
         ]
