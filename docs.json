@@ -73,7 +73,7 @@
   },
   "errors": {
     "404": {
-      "redirect": true
+      "redirect": false
     }
   }
 }
