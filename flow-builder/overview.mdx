@@ -1,0 +1,91 @@
+---
+title: "Descripción general del Constructor de Flujos"
+description: "Entiende cómo se organiza un chatbot en Botky: flujos, sub-flujos y pasos, sin necesidad de saber programar"
+icon: "diagram-project"
+---
+
+El **Constructor de Flujos** es el lugar donde diseñas la conversación de tu chatbot arrastrando y conectando bloques visuales — como armar un diagrama de flujo. No necesitas escribir código: todo se hace haciendo clic, arrastrando y conectando piezas.
+
+## La estructura: Flujo → Sub-flujo → Paso
+
+Piensa en tu chatbot como una casa con habitaciones, y cada habitación con muebles:
+
+<CardGroup cols={3}>
+  <Card title="Flujo" icon="house">
+    Es la "casa" completa: el contenedor principal de toda la lógica de tu bot para un canal específico (por ejemplo, tu bot de WhatsApp).
+  </Card>
+  <Card title="Sub-flujo" icon="door-open">
+    Son las "habitaciones" dentro del flujo: secciones que agrupan una parte de la conversación, para mantener todo ordenado.
+  </Card>
+  <Card title="Paso" icon="shapes">
+    Son los "muebles": la acción concreta dentro de una habitación, como enviar un mensaje o hacer una pregunta.
+  </Card>
+</CardGroup>
+
+<Accordion title="¿Qué tipos de pasos existen?">
+  Cada "mueble" (paso) tiene un propósito distinto:
+
+  - **Mostrar información** — envía texto, imágenes, videos o tarjetas al usuario
+  - **Hacer una pregunta** — pide un dato al usuario y espera su respuesta
+  - **Acción / integración** — se conecta a otros servicios (APIs, notificaciones, etc.)
+  - **Condición** — decide qué camino seguir según una regla ("si el usuario dijo X, entonces...")
+  - **Probabilidad** — elige un camino al azar, útil para pruebas A/B
+  - **Correo** — envía un email completo
+  - **Ir a...** — salta a otro paso sin necesidad de dibujar una línea de conexión
+  - **Salida** — define qué devuelve un sub-flujo de tipo función
+
+  <Tip>
+    No todos los canales soportan todo: por ejemplo, una galería de productos funciona en Messenger, pero no por SMS. Si algo no aparece disponible, probablemente sea por el canal que elegiste.
+  </Tip>
+</Accordion>
+
+## Versión publicada y versión borrador
+
+Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios reales.
+
+<Steps>
+  <Step title="Estás viendo la versión publicada">
+    Es la que tus clientes ven y con la que interactúan ahora mismo. Nada de lo que edites la afecta hasta que decidas publicar.
+  </Step>
+  <Step title="Haz clic en 'Editar flujo'">
+    Esto te lleva a la versión borrador. Aquí puedes experimentar con total libertad.
+  </Step>
+  <Step title="Tus cambios se guardan solos">
+    No hay botón de "guardar" — todo se guarda automáticamente mientras trabajas. Si sales sin querer, tu trabajo sigue ahí cuando vuelvas.
+  </Step>
+  <Step title="Decide qué hacer con tu borrador">
+    Tienes tres opciones: **publicar** (tu borrador pasa a ser la versión en vivo), **descartar** (vuelves a la última versión publicada) o simplemente **dejarlo como está** y seguir editando más tarde.
+  </Step>
+</Steps>
+
+## Cómo moverte por el Constructor de Flujos
+
+<CardGroup cols={2}>
+  <Card title="Barra de navegación (arriba)" icon="table-columns">
+    De izquierda a derecha encontrarás: el nombre de tu espacio de trabajo, el bot y flujo actual, el sub-flujo en el que estás, un botón de **Vista previa** para probar tu bot, y las opciones de tu cuenta.
+  </Card>
+  <Card title="Barra lateral (izquierda)" icon="bars">
+    Aquí accedes a todo: Constructor de Flujos, lista de Flujos, Analítica, Chat en vivo, Usuarios del bot, Automatización, Contenidos, Herramientas, Difusiones y Configuración.
+  </Card>
+</CardGroup>
+
+<Note>
+  Puedes personalizar tu espacio de trabajo: elige un tema visual, oculta el mini-mapa si te distrae, o activa/desactiva los tooltips (esos globitos de ayuda que explican cada botón).
+</Note>
+
+## Operaciones básicas para construir un flujo
+
+<AccordionGroup>
+  <Accordion title="Editar un paso" icon="pen">
+    Haz clic en cualquier paso para abrir su panel de edición a la derecha. Ahí puedes cambiarle el nombre y decidir cuál es el siguiente paso — eligiendo uno que ya existe o creando uno nuevo.
+  </Accordion>
+  <Accordion title="Conectar pasos" icon="link">
+    Arrastra una línea desde el círculo de un paso hasta otro para conectarlos. Si tu flujo se ve muy enredado, usa un paso de tipo **"Ir a..."** en vez de dibujar una línea larga — cumple la misma función sin ensuciar visualmente el lienzo.
+  </Accordion>
+  <Accordion title="Seleccionar varios pasos a la vez" icon="object-group">
+    Mantén presionada la tecla `Shift` y arrastra para encerrar varios pasos (o usa `Ctrl` + clic para elegirlos uno por uno). Los pasos seleccionados se marcan en verde, y podrás agruparlos, moverlos a otro sub-flujo, o borrarlos todos juntos con la tecla `Delete`.
+  </Accordion>
+  <Accordion title="Copiar y pegar pasos" icon="copy">
+    Puedes copiar pasos dentro del mismo sub-flujo, hacia otro sub-flujo, hacia otro bot del mismo canal (los campos personalizados se crean solos), o incluso hacia un canal distinto (las funciones que no sean compatibles se quitan automáticamente). Por seguridad, solo puedes pegar una vez por cada copia.
+  </Accordion>
+</AccordionGroup>
