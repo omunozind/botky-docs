@@ -19,10 +19,6 @@
   "navigation": {
     "groups": [
       {
-        "group": "Inicio",
-        "pages": ["index", "quickstart"]
-      },
-      {
         "group": "Constructor de Flujos",
         "pages": [
           {
@@ -50,10 +46,6 @@
             ]
           }
         ]
-      },
-      {
-        "group": "Guías",
-        "pages": ["guides/primera-guia"]
       }
     ]
   }
