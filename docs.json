@@ -3,7 +3,12 @@
   "theme": "mint",
   "name": "Botky",
   "colors": {
-    "primary": "#ff0000"
+    "primary": "#D6E62E",
+    "light": "#D6E62E",
+    "dark": "#101B28"
+  },
+  "background": {
+    "dark": "#101B28"
   },
   "appearance": {
     "default": "light"
