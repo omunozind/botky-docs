@@ -21,9 +21,14 @@
         "group": "Constructor de Flujos",
         "pages": [
           "flow-builder/overview",
-          "flow-builder/sub-flow",
-          "flow-builder/workflow",
-          "flow-builder/function-flow"
+          {
+            "group": "Subflujos",
+            "pages": [
+              "flow-builder/sub-flow",
+              "flow-builder/workflow",
+              "flow-builder/function-flow"
+            ]
+          }
         ]
       },
       {
