@@ -1,6 +1,25 @@
-/* Círculo numerado de <Steps> con los colores de marca Botky: fondo lima, número en azul marino */
-step > div:first-child {
+/* Círculo numerado de <Steps>: fondo lima, número en azul marino */
+[data-component-part="step-number"] > div {
+  background-color: #DBF227 !important;
+  color: #042940 !important;
+}
+
+/* Acordeones: fondo lima, texto azul marino */
+accordion {
   background-color: #DBF227 !important;
   border-color: #DBF227 !important;
+}
+
+accordion * {
+  color: #042940 !important;
+}
+
+/* Tarjetas: fondo lima, texto azul marino */
+card {
+  background-color: #DBF227 !important;
+  border-color: #DBF227 !important;
+}
+
+card * {
   color: #042940 !important;
 }
