@@ -1,130 +1,79 @@
 ---
 title: "Descripción general del Constructor de Flujos"
-description: "Entiende cómo se organiza un chatbot en Botky: flujos, sub-flujos y pasos, sin necesidad de saber programar"
+description: "Entiende cómo se organiza un chatbot en Botky: canales, flujos, subflujos y pasos, sin necesidad de saber programar"
 icon: "diagram-project"
 ---
 
 El **Constructor de Flujos** es el lugar donde diseñas la conversación de tu chatbot arrastrando y conectando bloques visuales — como armar un diagrama de flujo. No necesitas escribir código: todo se hace haciendo clic, arrastrando y conectando piezas.
 
-## La estructura: Flujo → Sub-flujo → Paso
+## Antes de empezar: canales
 
-Piensa en tu chatbot como una casa con habitaciones, y cada habitación con muebles:
+Todo arranca creando un **canal** — el medio por el que tu chatbot va a hablar con tus clientes. Botky soporta **17 tipos de canales**, incluyendo Facebook, Instagram, WhatsApp Cloud, Telegram, Slack, WeChat, WhatsApp, SMS, Voice, Line, Viber, VK y más.
 
-<CardGroup cols={3}>
-  <Card title="Flujo" icon="house">
-    Es la "casa" completa: el contenedor principal de toda la lógica de tu bot para un canal específico (por ejemplo, tu bot de WhatsApp).
+<Card type="note">
+  En esta documentación nos enfocamos en los canales más usados: Omnichannel, Facebook, Instagram, WeChat y WhatsApp Cloud. Los cubrimos en detalle en la sección de **Canales**.
+</Card>
+
+## La estructura: Subflujo → Paso
+
+Dentro de cada canal, tu chatbot se organiza en dos niveles:
+
+<CardGroup cols={2}>
+  <Card title="Subflujo" icon="door-open">
+    Una sección de tu conversación — la unidad principal en la que trabajas. Hay 3 tipos.
   </Card>
-
-  <Card title="Sub-flujo" icon="door-open">
-    Son las "habitaciones" dentro del flujo: secciones que agrupan una parte de la conversación, para mantener todo ordenado.
-  </Card>
-
   <Card title="Paso" icon="shapes">
-    Son los "muebles": la acción concreta dentro de una habitación, como enviar un mensaje o hacer una pregunta.
+    La acción concreta dentro de un subflujo, como enviar un mensaje o hacer una pregunta. Hay 8 tipos.
   </Card>
 </CardGroup>
 
-<Frame caption="Vista del Constructor de Flujos mostrando un flujo, sus sub-flujos y los pasos dentro de cada uno">
-  ![Captura De Pantalla 2026 07 09 194106](/images/Captura-de-pantalla-2026-07-09-194106.png)
-</Frame>
-
-<Accordion title="¿Qué tipos de sub-flujo puedes crear?">
+<Accordion title="¿Qué tipos de subflujo puedes crear?">
   <Card type="note">
-    Ojo: aquí "Subflujo" se usa de dos formas. Arriba, como concepto general, es cualquier "habitación" dentro de tu flujo. Aquí abajo, es uno de los tres tipos específicos que puedes elegir al crear una habitación nueva.
+    Ojo: aquí "Subflujo" se usa de dos formas. Arriba, como concepto general, es cualquier sección de tu flujo. Aquí abajo, es uno de los tres tipos específicos que puedes elegir al crear una sección nueva.
   </Card>
 
-  Dentro de un flujo puedes crear tres tipos distintos:
-
-  - **Subflujo** — te ayuda a organizar tus pasos agrupándolos en secciones dentro de todo tu chatbot, en vez de tener todo mezclado en un solo lugar
-  - **Flujo de trabajo** — un flujo de "backend" para automatizar tareas como agregar o quitar etiquetas, definir campos personalizados o hacer llamadas a APIs externas, sin que el usuario tenga que esperar. Así la conversación sigue fluida mientras todo eso pasa detrás de cámaras
-  - **Flujo de función** — te evita crear el mismo flujo una y otra vez (por ejemplo, para pedir el correo o el teléfono). Envías al usuario a ese flujo y, al terminar, regresa exactamente al punto donde se quedó en el flujo anterior
+  - **Subflujo** — el tipo más común, para enviar mensajes y manejar la interacción normal con el usuario
+  - **Flujo de trabajo** — para tareas en segundo plano que no necesitan que el usuario espere ni participe
+  - **Flujo de función** — para procesar tareas repetitivas que querrías reutilizar en varios lugares
 </Accordion>
 
-<Accordion title="¿Qué tipos de nodo (paso) existen?">
-  Al hacer clic derecho sobre el lienzo, tienes 7 tipos de nodo para construir tu automatización:
-
-  - **Enviar mensaje** — muestra texto, imágenes, videos o tarjetas al usuario
-  - **Pregunta** — pide un dato al usuario y espera su respuesta
-  - **Acción** — se conecta con servicios externos: variables, peticiones a APIs, notificaciones, esperas, o lógica personalizada
-  - **Condición** — decide qué camino seguir según una regla ("si el usuario dijo X, entonces...")
-  - **Dividir (Split)** — reparte el tráfico entre varios caminos, útil para pruebas A/B
-  - **Enviar correo** — envía un email completo
-  - **Ir a...** — salta a otro nodo sin necesidad de dibujar una línea de conexión
+<Accordion title="¿Qué tipos de paso existen?">
+  - **Enviar mensaje** — muestra información al usuario
+  - **Pregunta** — pregunta algo y espera la respuesta del usuario
+  - **Acción** — procesa datos y tareas mediante integraciones, APIs, notificaciones, etc.
+  - **Condición** — sigue un camino u otro según se cumpla una condición
+  - **Dividir (Split)** — sigue un camino u otro según una probabilidad (útil para pruebas A/B)
+  - **Enviar correo** — envía un correo completo, no solo una notificación corta
+  - **Ir a...** — salta a otro paso o subflujo sin necesidad de una línea de conexión visual
+  - **Salida (Output)** — define qué devuelve un Flujo de función al terminar
 
   <Card type="tip">
     No todos los canales soportan todo: por ejemplo, una galería de productos funciona en Messenger, pero no por SMS. Si algo no aparece disponible, probablemente sea por el canal que elegiste.
   </Card>
 </Accordion>
 
-## Versión publicada y versión borrador
+<Frame caption="Vista del Constructor de Flujos mostrando un flujo, sus subflujos y los pasos dentro de cada uno">
+  ![Captura De Pantalla 2026 07 09 194106](/images/Captura-de-pantalla-2026-07-09-194106.png)
+</Frame>
 
-Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios reales.
+## Etiquetas de flujo
+
+Cuando tienes muchos subflujos, las **etiquetas** te ayudan a organizarlos por nombre y color.
 
 <Steps>
-  <Step title="Estás viendo la versión publicada">
-    Es la que tus clientes ven y con la que interactúan ahora mismo. Nada de lo que edites la afecta hasta que decidas publicar.
+  <Step title="Crea una etiqueta">
+    Ponle un nombre y elige un color para identificarla visualmente.
   </Step>
-  <Step title="Haz clic en 'Editar flujo'">
-    Esto te lleva a la versión borrador. Aquí puedes experimentar con total libertad.
+  <Step title="Asígnala a un subflujo">
+    Abre el menú de tres puntos (⋯) del subflujo, entra a "Administrar etiquetas" y selecciona las que quieras asignarle. Un mismo subflujo puede tener varias etiquetas.
   </Step>
-  <Step title="Tus cambios se guardan solos">
-    No hay botón de "guardar" — todo se guarda automáticamente mientras trabajas. Si sales sin querer, tu trabajo sigue ahí cuando vuelvas.
-  </Step>
-  <Step title="Decide qué hacer con tu borrador">
-    Tienes tres opciones: **publicar** (tu borrador pasa a ser la versión en vivo), **descartar** (vuelves a la última versión publicada) o simplemente **dejarlo como está** y seguir editando más tarde.
+  <Step title="Filtra por etiqueta">
+    Tienes dos formas de filtrar: **"Todas las etiquetas seleccionadas"** muestra solo los subflujos que tienen absolutamente todas las etiquetas elegidas, y **"Cualquier etiqueta seleccionada"** muestra los que tengan al menos una.
   </Step>
 </Steps>
 
-<Frame caption="Botón 'Editar flujo' y el indicador de versión borrador/publicada">
-  <div className="botky-image-placeholder w-full aspect-video rounded-xl flex items-center justify-center font-semibold">
-    Captura pendiente
-  </div>
-</Frame>
-
-## Cómo moverte por el Constructor de Flujos
-
-<CardGroup cols={2}>
-  <Card title="Barra de navegación (arriba)" icon="table-columns">
-    De izquierda a derecha encontrarás: el nombre de tu espacio de trabajo, el bot y flujo actual, el sub-flujo en el que estás, un botón de **Vista previa** para probar tu bot, y las opciones de tu cuenta.
-  </Card>
-
-  <Card title="Barra lateral (izquierda)" icon="bars">
-    Aquí accedes a todo: Constructor de Flujos, lista de Flujos, Analítica, Chat en vivo, Usuarios del bot, Automatización, Contenidos, Herramientas, Difusiones y Configuración.
-  </Card>
-</CardGroup>
-
 <Card type="note">
-  Puedes personalizar tu espacio de trabajo: elige un tema visual, oculta el mini-mapa si te distrae, o activa/desactiva los tooltips (esos globitos de ayuda que explican cada botón).
+  Cuando aplicas un filtro, los subflujos que no coincidan quedan ocultos — incluso dentro de carpetas.
 </Card>
 
-<Frame caption="Barra de navegación superior y barra lateral del Constructor de Flujos">
-  <div className="botky-image-placeholder w-full aspect-video rounded-xl flex items-center justify-center font-semibold">
-    Captura pendiente
-  </div>
-</Frame>
-
-## Operaciones básicas para construir un flujo
-
-<AccordionGroup>
-  <Accordion title="Editar un paso" icon="pen">
-    Haz clic en cualquier paso para abrir su panel de edición a la derecha. Ahí puedes cambiarle el nombre y decidir cuál es el siguiente paso — eligiendo uno que ya existe o creando uno nuevo.
-  </Accordion>
-
-  <Accordion title="Conectar pasos" icon="link">
-    Arrastra una línea desde el círculo de un paso hasta otro para conectarlos. Si tu flujo se ve muy enredado, usa un paso de tipo **"Ir a..."** en vez de dibujar una línea larga — cumple la misma función sin ensuciar visualmente el lienzo.
-  </Accordion>
-
-  <Accordion title="Seleccionar varios pasos a la vez" icon="object-group">
-    Mantén presionada la tecla `Shift` y arrastra para encerrar varios pasos (o usa `Ctrl` + clic para elegirlos uno por uno). Los pasos seleccionados se marcan en verde, y podrás agruparlos, moverlos a otro sub-flujo, o borrarlos todos juntos con la tecla `Delete`.
-  </Accordion>
-
-  <Accordion title="Copiar y pegar pasos" icon="copy">
-    Puedes copiar pasos dentro del mismo sub-flujo, hacia otro sub-flujo, hacia otro bot del mismo canal (los campos personalizados se crean solos), o incluso hacia un canal distinto (las funciones que no sean compatibles se quitan automáticamente). Por seguridad, solo puedes pegar una vez por cada copia.
-  </Accordion>
-</AccordionGroup>
-
-<Frame caption="Selección múltiple de pasos (bordes en verde) lista para agrupar o mover">
-  <div className="botky-image-placeholder w-full aspect-video rounded-xl flex items-center justify-center font-semibold">
-    Captura pendiente
-  </div>
-</Frame>
+También puedes hacer **acciones en lote** sobre varios subflujos a la vez: agregar o quitar etiquetas, moverlos de carpeta, o eliminarlos todos juntos.
