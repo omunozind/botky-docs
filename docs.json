@@ -25,7 +25,16 @@
       {
         "group": "Constructor de Flujos",
         "pages": [
-          "flow-builder/overview",
+          {
+            "group": "Descripción general",
+            "pages": [
+              "flow-builder/overview",
+              "flow-builder/field-variable",
+              "flow-builder/publish-draft",
+              "flow-builder/navigation-sidebar",
+              "flow-builder/basic-operations"
+            ]
+          },
           {
             "group": "Subflujos",
             "pages": [
