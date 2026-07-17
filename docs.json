@@ -17,7 +17,7 @@
     "library": "fontawesome"
   },
   "navigation": {
-    "pages": [
+    "groups": [
       {
         "group": "Constructor de Flujos",
         "pages": [
@@ -65,8 +65,7 @@
             ]
           }
         ]
-      },
-      "index"
+      }
     ]
   },
   "markdown": {
