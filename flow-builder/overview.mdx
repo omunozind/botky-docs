@@ -12,7 +12,7 @@ Piensa en tu chatbot como una casa con habitaciones, y cada habitación con mueb
 
 <CardGroup cols={3}>
   <Card title="Flujo" icon="house">
-    Es la "casa" completa: el contenedor principal de toda la lógica de tu bot para un canal específico (por ejemplo, tu bot de WhatsApp). Existen 11 tipos de flujo distintos, según el canal con el que quieras hablar.
+    Es la "casa" completa: el contenedor principal de toda la lógica de tu bot para un canal específico (por ejemplo, tu bot de WhatsApp).
   </Card>
   <Card title="Sub-flujo" icon="door-open">
     Son las "habitaciones" dentro del flujo: secciones que agrupan una parte de la conversación, para mantener todo ordenado.
@@ -26,25 +26,24 @@ Piensa en tu chatbot como una casa con habitaciones, y cada habitación con mueb
   <img src="/images/flow-builder/estructura-flujo.png" alt="Vista general del Constructor de Flujos con flujo, sub-flujo y pasos" />
 </Frame>
 
-<Accordion title="¿Qué tipos de sub-flujo existen?">
-  No todos los sub-flujos son iguales, hay tres clases:
+<Accordion title="¿Qué tipos de sub-flujo puedes crear?">
+  Dentro de un flujo puedes crear tres tipos distintos:
 
-  - **Sub-flujo general** — el más común, su comportamiento varía según el tipo de flujo en el que estés
-  - **Tarea en segundo plano (con activador)** — procesa tareas repetitivas sin que el usuario lo note
-  - **Procesamiento en segundo plano** — ejecuta lógica interna sin interacción directa con el usuario
+  - **Sub Flow** — el más común: la sección estándar donde construyes la mayor parte de tu conversación
+  - **Workflow** — se activa con un disparador (trigger) y procesa tareas en segundo plano, sin que el usuario lo note
+  - **Function Flow** — funciona como una "función" reutilizable: la llamas desde otro flujo, hace su trabajo, y te devuelve un resultado
 </Accordion>
 
-<Accordion title="¿Qué tipos de pasos existen?">
-  Cada "mueble" (paso) tiene un propósito distinto:
+<Accordion title="¿Qué tipos de nodo (paso) existen?">
+  Al hacer clic derecho sobre el lienzo, tienes 7 tipos de nodo para construir tu automatización:
 
-  - **Mostrar información** — envía texto, imágenes, videos o tarjetas al usuario
-  - **Hacer una pregunta** — pide un dato al usuario y espera su respuesta
-  - **Acción / integración** — se conecta a otros servicios (APIs, notificaciones, etc.)
+  - **Enviar mensaje** — muestra texto, imágenes, videos o tarjetas al usuario
+  - **Pregunta** — pide un dato al usuario y espera su respuesta
+  - **Acción** — se conecta con servicios externos: variables, peticiones a APIs, notificaciones, esperas, o lógica personalizada
   - **Condición** — decide qué camino seguir según una regla ("si el usuario dijo X, entonces...")
-  - **Probabilidad** — elige un camino al azar, útil para pruebas A/B
-  - **Correo** — envía un email completo
-  - **Ir a...** — salta a otro paso sin necesidad de dibujar una línea de conexión
-  - **Salida** — define qué devuelve un sub-flujo de tipo función
+  - **Dividir (Split)** — reparte el tráfico entre varios caminos, útil para pruebas A/B
+  - **Enviar correo** — envía un email completo
+  - **Ir a...** — salta a otro nodo sin necesidad de dibujar una línea de conexión
 
   <Tip>
     No todos los canales soportan todo: por ejemplo, una galería de productos funciona en Messenger, pero no por SMS. Si algo no aparece disponible, probablemente sea por el canal que elegiste.
