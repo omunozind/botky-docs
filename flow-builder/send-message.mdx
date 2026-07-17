@@ -106,6 +106,10 @@ Algunos canales tienen tipos de mensaje propios, además de los generales de arr
         Parecido al botón, pero desaparece en cuanto el usuario lo usa.
       </Card>
     </CardGroup>
+
+    <Card type="note">
+      **Permiso de llamada**: envía una solicitud pidiéndole permiso al usuario para recibir una llamada de voz. En el nodo de mensaje, elige "Otros" → "(WhatsApp/Messenger) Permiso de llamada".
+    </Card>
   </Tab>
 
   <Tab title="WeChat">
@@ -170,6 +174,14 @@ Algunos canales tienen tipos de mensaje propios, además de los generales de arr
         <Card type="warning">
           No uses un nodo de Acción para enviar plantillas — genera un error de "acción prohibida". Siempre usa el nodo de Mensaje para esto.
         </Card>
+      </Accordion>
+
+      <Accordion title="Contacto (WhatsApp Contact)">
+        Envía una tarjeta de contacto al usuario, con nombre y teléfono. En el nodo de mensaje, haz clic en "+ Agregar elemento", elige "Otros" y selecciona "(WhatsApp) Contacto".
+      </Accordion>
+
+      <Accordion title="Permiso de llamada">
+        Envía una solicitud pidiéndole permiso al usuario para recibir una llamada de voz. Disponible tanto en WhatsApp como en Messenger. En el nodo de mensaje, elige "Otros" → "(WhatsApp/Messenger) Permiso de llamada".
       </Accordion>
     </AccordionGroup>
   </Tab>
