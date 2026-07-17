@@ -5,21 +5,25 @@
 }
 
 /* Acordeones: fondo lima, texto azul marino */
-accordion {
+accordion,
+accordion > div,
+accordion * {
   background-color: #DBF227 !important;
   border-color: #DBF227 !important;
-}
-
-accordion * {
   color: #042940 !important;
 }
 
 /* Tarjetas: fondo lima, texto azul marino */
-card {
+card,
+card > div,
+card * {
   background-color: #DBF227 !important;
   border-color: #DBF227 !important;
+  color: #042940 !important;
 }
 
-card * {
+/* Placeholder de imagen: fondo lima, texto azul marino */
+.botky-image-placeholder {
+  background-color: #DBF227 !important;
   color: #042940 !important;
 }
