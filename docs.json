@@ -19,7 +19,12 @@
       },
       {
         "group": "Constructor de Flujos",
-        "pages": ["flow-builder/overview"]
+        "pages": [
+          "flow-builder/overview",
+          "flow-builder/sub-flow",
+          "flow-builder/workflow",
+          "flow-builder/function-flow"
+        ]
       },
       {
         "group": "Guías",
