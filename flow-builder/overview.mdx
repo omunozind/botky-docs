@@ -14,16 +14,18 @@ Piensa en tu chatbot como una casa con habitaciones, y cada habitación con mueb
   <Card title="Flujo" icon="house">
     Es la "casa" completa: el contenedor principal de toda la lógica de tu bot para un canal específico (por ejemplo, tu bot de WhatsApp).
   </Card>
+
   <Card title="Sub-flujo" icon="door-open">
     Son las "habitaciones" dentro del flujo: secciones que agrupan una parte de la conversación, para mantener todo ordenado.
   </Card>
+
   <Card title="Paso" icon="shapes">
     Son los "muebles": la acción concreta dentro de una habitación, como enviar un mensaje o hacer una pregunta.
   </Card>
 </CardGroup>
 
 <Frame caption="Vista del Constructor de Flujos mostrando un flujo, sus sub-flujos y los pasos dentro de cada uno">
-  <img src="/images/flow-builder/estructura-flujo.png" alt="Vista general del Constructor de Flujos con flujo, sub-flujo y pasos" />
+  ![Captura De Pantalla 2026 07 09 194106](/images/Captura-de-pantalla-2026-07-09-194106.png)
 </Frame>
 
 <Accordion title="¿Qué tipos de sub-flujo puedes crear?">
@@ -74,7 +76,7 @@ Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios r
 </Steps>
 
 <Frame caption="Botón 'Editar flujo' y el indicador de versión borrador/publicada">
-  <img src="/images/flow-builder/version-borrador-publicada.png" alt="Interfaz mostrando el cambio entre versión borrador y versión publicada" />
+  ![Interfaz mostrando el cambio entre versión borrador y versión publicada](/images/flow-builder/version-borrador-publicada.png)
 </Frame>
 
 ## Cómo moverte por el Constructor de Flujos
@@ -83,6 +85,7 @@ Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios r
   <Card title="Barra de navegación (arriba)" icon="table-columns">
     De izquierda a derecha encontrarás: el nombre de tu espacio de trabajo, el bot y flujo actual, el sub-flujo en el que estás, un botón de **Vista previa** para probar tu bot, y las opciones de tu cuenta.
   </Card>
+
   <Card title="Barra lateral (izquierda)" icon="bars">
     Aquí accedes a todo: Constructor de Flujos, lista de Flujos, Analítica, Chat en vivo, Usuarios del bot, Automatización, Contenidos, Herramientas, Difusiones y Configuración.
   </Card>
@@ -93,7 +96,7 @@ Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios r
 </Card>
 
 <Frame caption="Barra de navegación superior y barra lateral del Constructor de Flujos">
-  <img src="/images/flow-builder/navegacion-sidebar.png" alt="Barra de navegación y barra lateral con todas las secciones" />
+  ![Barra de navegación y barra lateral con todas las secciones](/images/flow-builder/navegacion-sidebar.png)
 </Frame>
 
 ## Operaciones básicas para construir un flujo
@@ -102,17 +105,20 @@ Todo lo que edites vive primero en un **borrador**, sin afectar a tus usuarios r
   <Accordion title="Editar un paso" icon="pen">
     Haz clic en cualquier paso para abrir su panel de edición a la derecha. Ahí puedes cambiarle el nombre y decidir cuál es el siguiente paso — eligiendo uno que ya existe o creando uno nuevo.
   </Accordion>
+
   <Accordion title="Conectar pasos" icon="link">
     Arrastra una línea desde el círculo de un paso hasta otro para conectarlos. Si tu flujo se ve muy enredado, usa un paso de tipo **"Ir a..."** en vez de dibujar una línea larga — cumple la misma función sin ensuciar visualmente el lienzo.
   </Accordion>
+
   <Accordion title="Seleccionar varios pasos a la vez" icon="object-group">
-    Mantén presionada la tecla `Shift` y arrastra para encerrar varios pasos (o usa `Ctrl` + clic para elegirlos uno por uno). Los pasos seleccionados se marcan en verde, y podrás agruparlos, moverlos a otro sub-flujo, o borrarlos todos juntos con la tecla `Delete`.
+    Mantén presionada la tecla `Shift` y arrastra para encerrar varios pasos (o usa `Ctrl` \+ clic para elegirlos uno por uno). Los pasos seleccionados se marcan en verde, y podrás agruparlos, moverlos a otro sub-flujo, o borrarlos todos juntos con la tecla `Delete`.
   </Accordion>
+
   <Accordion title="Copiar y pegar pasos" icon="copy">
     Puedes copiar pasos dentro del mismo sub-flujo, hacia otro sub-flujo, hacia otro bot del mismo canal (los campos personalizados se crean solos), o incluso hacia un canal distinto (las funciones que no sean compatibles se quitan automáticamente). Por seguridad, solo puedes pegar una vez por cada copia.
   </Accordion>
 </AccordionGroup>
 
 <Frame caption="Selección múltiple de pasos (bordes en verde) lista para agrupar o mover">
-  <img src="/images/flow-builder/seleccion-multiple.png" alt="Varios pasos seleccionados con bordes verdes en el lienzo" />
+  ![Varios pasos seleccionados con bordes verdes en el lienzo](/images/flow-builder/seleccion-multiple.png)
 </Frame>
