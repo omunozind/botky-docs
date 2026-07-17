@@ -47,7 +47,19 @@
               {
                 "group": "Acción",
                 "pages": [
-                  "flow-builder/notifications"
+                  "flow-builder/notifications",
+                  {
+                    "group": "Acciones avanzadas",
+                    "pages": [
+                      "flow-builder/external-request",
+                      "flow-builder/smart-delay",
+                      "flow-builder/javascript-function",
+                      "flow-builder/send-sms-action",
+                      "flow-builder/update-user-profile",
+                      "flow-builder/trigger-workflow-action",
+                      "flow-builder/rate-limit-attempts"
+                    ]
+                  }
                 ]
               }
             ]
