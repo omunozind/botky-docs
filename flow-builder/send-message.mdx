@@ -4,7 +4,17 @@ description: "Todo lo que tu bot puede enviar: texto, imágenes, tarjetas, lista
 icon: "message"
 ---
 
+export const Placeholder = () => (
+  <div className="botky-image-placeholder w-full aspect-video rounded-xl flex items-center justify-center font-semibold">
+    Captura pendiente
+  </div>
+);
+
 El nodo **Enviar mensaje** es el más usado del Constructor de Flujos: sirve para que tu bot le muestre algo al usuario — texto, una imagen, una tarjeta de producto, o incluso una lista generada automáticamente a partir de datos.
+
+<Frame caption="Selector de tipo de mensaje al enviar un mensaje">
+  <Placeholder />
+</Frame>
 
 ## Tipos de mensaje generales
 
@@ -20,6 +30,10 @@ El nodo **Enviar mensaje** es el más usado del Constructor de Flujos: sirve par
     2. O simplemente escribe `{{` mientras redactas, y aparecerá la lista de campos disponibles
 
     Así personalizas tus mensajes con datos dinámicos (nombre del usuario, un valor guardado, etc.) sin salir del editor.
+
+    <Frame caption="Buscador de campos personalizados y emojis dentro del editor de texto">
+      <Placeholder />
+    </Frame>
   </Accordion>
 
   <Accordion title="Imagen, audio, video y archivo" icon="paperclip">
@@ -33,6 +47,10 @@ El nodo **Enviar mensaje** es el más usado del Constructor de Flujos: sirve par
     <Card type="note">
       Límites de tamaño al subir desde tu computador: **Video** 10MB, **Audio** 5MB, **Archivo** 5MB, **Otros (imágenes, etc.)** 2MB.
     </Card>
+
+    <Frame caption="Las 4 formas de adjuntar contenido multimedia">
+      <Placeholder />
+    </Frame>
   </Accordion>
 
   <Accordion title="Tarjeta (Card)" icon="id-card">
@@ -45,6 +63,10 @@ El nodo **Enviar mensaje** es el más usado del Constructor de Flujos: sirve par
     <Card type="warning">
       Si quieres enviar una tarjeta en el canal de WhatsApp, la Tarjeta normal no funciona ahí — necesitas crear una **Plantilla de Carrusel** en su lugar.
     </Card>
+
+    <Frame caption="Editor de tarjeta: imagen, título, subtítulo y botón">
+      <Placeholder />
+    </Frame>
   </Accordion>
 
   <Accordion title='Bucle "Para cada uno" (For Each)' icon="repeat">
@@ -65,14 +87,26 @@ El nodo **Enviar mensaje** es el más usado del Constructor de Flujos: sirve par
     - **VALUE** — el valor de esa propiedad
 
     **Botón dentro de "Para cada uno":** si le agregas un botón, aparece en cada tarjeta generada. Cuando el usuario elige una, el dato de esa tarjeta específica queda disponible en un campo especial llamado **SELECT**.
+
+    <Frame caption='Configuración del bucle "Para cada uno" seleccionando la variable JSON e ITEM'>
+      <Placeholder />
+    </Frame>
   </Accordion>
 
   <Accordion title="Contenido dinámico" icon="server">
     Envía una solicitud a tu servidor (o a uno externo) para pedir una respuesta y mostrarla al usuario. Es para cuando la lógica de tu bot depende de otro sistema — por ejemplo, tu propio motor de IA analizando la pregunta del usuario. Una sola respuesta puede incluir varios mensajes, botones y quick replies con acciones.
+
+    <Frame caption="Configuración de una solicitud de Contenido dinámico">
+      <Placeholder />
+    </Frame>
   </Accordion>
 
   <Accordion title="Ubicación" icon="location-dot">
     Busca el lugar en el mapa, haz clic derecho sobre él para copiar la latitud y longitud, y pégalas en el nodo junto con el nombre del lugar. Puedes agregar una etiqueta con información extra (como el número de piso u oficina).
+
+    <Frame caption="Selector de ubicación en el mapa">
+      <Placeholder />
+    </Frame>
   </Accordion>
 
   <Accordion title="Producto de Ecommerce" icon="cart-shopping">
@@ -81,14 +115,12 @@ El nodo **Enviar mensaje** es el más usado del Constructor de Flujos: sirve par
 
   <Accordion title="Texto de depuración (Debug)" icon="bug">
     Una forma fácil de enviar mensajes de prueba que **solo ven tus testers**, no los usuarios normales. Primero agrega testers en Herramientas → Testers → Nuevo Tester. Durante la vista previa, el texto de depuración es visible solo para ellos.
+
+    <Frame caption="Agregar un tester y enviar un texto de depuración">
+      <Placeholder />
+    </Frame>
   </Accordion>
 </AccordionGroup>
-
-<Frame caption="Selector de tipo de mensaje al enviar un mensaje">
-  <div className="botky-image-placeholder w-full aspect-video rounded-xl flex items-center justify-center font-semibold">
-    Captura pendiente
-  </div>
-</Frame>
 
 ## Mensajes específicos por canal
 
@@ -107,6 +139,10 @@ Algunos canales tienen tipos de mensaje propios, además de los generales de arr
       </Card>
     </CardGroup>
 
+    <Frame caption="Mensaje de Facebook con botones y quick replies configurados">
+      <Placeholder />
+    </Frame>
+
     <Card type="note">
       **Permiso de llamada**: envía una solicitud pidiéndole permiso al usuario para recibir una llamada de voz. En el nodo de mensaje, elige "Otros" → "(WhatsApp/Messenger) Permiso de llamada".
     </Card>
@@ -123,6 +159,14 @@ Algunos canales tienen tipos de mensaje propios, además de los generales de arr
         Envía mini-programas asociados a tu cuenta oficial de WeChat.
       </Card>
     </CardGroup>
+
+    <Frame caption="Editor de Artículo de WeChat">
+      <Placeholder />
+    </Frame>
+
+    <Frame caption="Configuración de Mini Programa de WeChat">
+      <Placeholder />
+    </Frame>
   </Tab>
 
   <Tab title="WhatsApp">
@@ -150,22 +194,42 @@ Algunos canales tienen tipos de mensaje propios, además de los generales de arr
             Si la plantilla tiene variables, personaliza el contenido.
           </Step>
         </Steps>
+
+        <Frame caption="Selector de plantilla de WhatsApp dentro del nodo de mensaje">
+          <Placeholder />
+        </Frame>
       </Accordion>
 
       <Accordion title="Producto único">
         Muestra un solo producto de tu Catálogo de Facebook. En el nodo de mensaje, elige "Otros" → "(WhatsApp) Producto Único", indica el ID del catálogo y el Retail ID del producto, junto con el texto del mensaje y del pie.
+
+        <Frame caption="Configuración de mensaje de Producto único">
+          <Placeholder />
+        </Frame>
       </Accordion>
 
       <Accordion title="Múltiples productos">
         Igual al anterior, pero muestra hasta 30 productos. Además del Retail ID, mensaje y pie, aquí también puedes definir un texto de encabezado.
+
+        <Frame caption="Configuración de mensaje de Múltiples productos">
+          <Placeholder />
+        </Frame>
       </Accordion>
 
       <Accordion title="Mensaje de catálogo">
         Muestra una lista de productos directamente desde tu Catálogo de Facebook (Retail ID, mensaje y pie).
+
+        <Frame caption="Configuración de Mensaje de catálogo">
+          <Placeholder />
+        </Frame>
       </Accordion>
 
       <Accordion title="Mensaje de lista">
         Presenta una lista de opciones para que el usuario elija. Es importante: capturar la opción elegida, y usar un nodo de Condición después para dirigir el flujo según lo que el usuario seleccionó.
+
+        <Frame caption="Configuración de Mensaje de lista y sus opciones">
+          <Placeholder />
+        </Frame>
       </Accordion>
 
       <Accordion title="WhatsApp Flow">
@@ -174,10 +238,18 @@ Algunos canales tienen tipos de mensaje propios, además de los generales de arr
         <Card type="warning">
           No uses un nodo de Acción para enviar plantillas — genera un error de "acción prohibida". Siempre usa el nodo de Mensaje para esto.
         </Card>
+
+        <Frame caption="Selector de WhatsApp Flow dentro del nodo de mensaje">
+          <Placeholder />
+        </Frame>
       </Accordion>
 
       <Accordion title="Contacto (WhatsApp Contact)">
         Envía una tarjeta de contacto al usuario, con nombre y teléfono. En el nodo de mensaje, haz clic en "+ Agregar elemento", elige "Otros" y selecciona "(WhatsApp) Contacto".
+
+        <Frame caption="Configuración de tarjeta de Contacto">
+          <Placeholder />
+        </Frame>
       </Accordion>
 
       <Accordion title="Permiso de llamada">
