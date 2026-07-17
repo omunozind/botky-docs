@@ -33,6 +33,12 @@
               "flow-builder/workflow",
               "flow-builder/function-flow"
             ]
+          },
+          {
+            "group": "Building Blocks / Pasos",
+            "pages": [
+              "flow-builder/send-message"
+            ]
           }
         ]
       },
